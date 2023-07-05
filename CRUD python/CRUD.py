@@ -140,7 +140,8 @@ def borrar():
     elCursor=laConexion.cursor()
     try:
         if messagebox.askyesno(message="¿Realmente desea eliminar el registro?",title="advertencia"):
-            elCursor.execute("DELETE FROM ususarios WHERE ID=" + elID.get())
+            elCursor.execute("DELETE FROM usuarios WHERE ID=" + elID.get())
+            laConexion.commit()
     except:
         messagebox.showwarning("ADVERTENCIA","OCURRIO UN ERROR AL TRATAR DE ELIMINAR EL REGISTRO")  
         pass
